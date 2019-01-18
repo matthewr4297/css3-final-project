@@ -1,0 +1,58 @@
+body{
+    background-color:black;
+    z-index:-1;
+}
+span{
+    color:white;
+    text-align:center;
+    font-family:Impact, Charcoal, sans-serif;
+    font-size:315px;
+}
+
+.border{
+    background-color:black;
+    display:inline-block;
+    position:absolute;
+    left:37%;    /*Lines 14 through 18 help the border to be centered while the content in the background is playing*/
+    top:25%;
+    height:425px;
+    width:500px;
+    box-shadow: 10px 10px 50px #3B3F40;  
+    /*animation-name:borderFX;
+    animation-duration:100s; */
+    
+    animation-name:moving-gradient1;
+    animation: moving-gradient1 10s ease infinite;                
+    background: linear-gradient(0deg, #d90000, #e1147f, #ffc229); /*Fade effect for the border logo*/
+    background-size: 600% 600%; 
+    
+    /*border:2px double pink;/*Temporary Boarder to reference where the border is */
+
+}
+span:hover{
+    font-size:400px;
+}
+.video{
+    position:fixed;
+    right:0;
+    bottom:0;
+    min-width:100%;
+    min-height:100%;
+    animation-name:promoFX;
+    animation-duration:100s;
+}
+
+/*@keyframes borderFX{
+    
+}
+
+@keyframes promoFX{/*
+    0%{}
+}
+*/
+@keyframes moving-gradient1 { 
+    0%{background-position:51% 0%}
+    50%{background-position:50% 100%}
+    100%{background-position:51% 0%}
+}
+

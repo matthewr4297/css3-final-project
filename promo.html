@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>promo.html</title>
+  <link rel="stylesheet" href="promo.css" type="text/css"> 
+  </head>
+  <body onload="onload();">
+  <audio autoplay>
+    <source src="Dust Devil-D-Code(The Adult Swim Theme).mp3" type="audio/mpeg"><!--Specifies the audio that I use, and plays as soon as you load the webpage
+  -->
+  </audio>
+  
+  <div class="border">
+      <span class="[" span style="text-shadow:#3B3F40 5px 5px 5px">[</span> <!--These spans make it so each letter can have a different property from one another. Also incudes a shadow -->
+      <span class="a" span style="text-shadow:#3B3F40 5px 5px 5px">a</span>
+      <span class="s" span style="text-shadow:#3B3F40 5px 5px 5px">s</span>
+      <span class="]" span style="text-shadow:#3B3F40 5px 5px 5px">]</span>
+  </div>
+  <video id="idle_video" width="1800" height="900" onended="onVideoEnded();"></video>
+    <script>
+    
+        var video_list      = ["OTAClip1.mp4",
+                              "OTAClip2.mp4",
+                              "OTAClip3.mp4",
+                              "OTAClip4.mp4",
+                              "OTAClip5.mp4"
+                            ];
+                            
+        var video_index     = 0;
+        var video_player    = null;
+        
+
+        function onload(){
+          
+            console.log("body loaded");
+            video_player        = document.getElementById("idle_video");
+            video_player.setAttribute("src", video_list[video_index]);
+            video_player.play();
+            video_player.muted = true;
+        }
+
+        function onVideoEnded(){
+            console.log("video ended");
+            if(video_index < video_list.length - 1){
+                video_index++;
+            }
+            else{
+                video_index = 0;
+            }
+            video_player.setAttribute("src", video_list[video_index]);
+            video_player.play();
+        }
+    </script>
+    <!-- This may seem out of place and may seem like I might be cheating for using JavaScript. But this was essentially my only option
+    since there was no way to automatically loop videos using HTML or CSS alone. Credits to "yusufabdulloh" on Stack Overflow for the original code-->
+  </body>
+</html>
