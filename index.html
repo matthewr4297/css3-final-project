@@ -6,11 +6,7 @@
   <link rel="stylesheet" href="style.css" type="text/css"> 
   </head>
   <body>
-  <audio autoplay>
-    <source src="Dust Devil-D-Code(The Adult Swim Theme).mp3" type="audio/mpeg"><!--Specifies the audio that I use, and plays as soon as you load the webpage
-  -->
-  </audio>
-  <button onclick= "onLoad()" type="button">Play Video</button><!-- Due to Chrome not allowing to play audio or video without the user input, I added a button which the user presses to play the animation.-->
+  <button onclick= "onLoad()" type="button">[play]</button><!-- Due to Chrome not allowing to play audio or video without the user input, I added a button which the user presses to play the animation.-->
   <div class="border">
       <span class="[" span style="text-shadow:#3B3F40 5px 5px 5px">[</span> <!--These spans make it so each letter can have a different property from one another. Also incudes a shadow -->
       <span class="a" span style="text-shadow:#3B3F40 5px 5px 5px">a</span>
@@ -40,8 +36,13 @@
             video_player.setAttribute("src", video_list[video_index]);
             video_player.play();
             video_player.muted = true;
+            audio.play();
+            
+            
         }
 
+        var audio= new Audio('Dust Devil-D-Code(The Adult Swim Theme).mp3'); 
+        
         function onVideoEnded(){
             console.log("video ended");
             if(video_index < video_list.length - 1){
